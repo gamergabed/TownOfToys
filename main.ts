@@ -32,7 +32,7 @@ namespace SpriteKind {
  * Hi This is a note from TheOminousWolf This project is cool, as it contains stuff like Dynamic Depth and the saving of Tilemaps! You shoud look at the code of this project, who knows, maybe this will be useful! Well have fun! Oh! and there will be Comments that explain things, Other wise you will be as confused as someone learning redstone in minecraft.
  */
 function PlayerSetup () {
-    mySprite = sprites.create(assets.image`playerTest`, SpriteKind.Player)
+    mySprite = sprites.create(assets.image`tempImage`, SpriteKind.Player)
     controller.moveSprite(mySprite)
     scene.cameraFollowSprite(mySprite)
 }
@@ -123,6 +123,10 @@ let _array: number[] = []
 let tileIndex: Image[] = []
 let mySprite: Sprite = null
 Init()
+if (game.ask("Clear Game?", "This is Permement!")) {
+    blockSettings.clear()
+    game.reset()
+}
 PlayerSetup()
 setupWorld()
 game.onUpdate(function () {

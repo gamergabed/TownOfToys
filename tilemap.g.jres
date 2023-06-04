@@ -70,17 +70,17 @@
         "tilemapTile": true,
         "displayName": "water"
     },
-    "tile12": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4E7u7u4AAADgTu7u7gAAAOBO5O7uAAAA4O7k7u4AAADg7uTu7gAAAODu5O7uAES75O7k7u4A7Lvg7uTu7gAEu+Du5O7uAAQA4E7k7u4ABADgTu7u7gBERORO7u7uAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "basicCraft"
-    },
     "tile13": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAODu7u7OAAAATuRERM4AAABO5EREDgAAAE7kREQOAAAATuRERA4AAABO5EREDgAAAE7dTUTOAAAATt1NRM4AAABO5EREDgAAAE7kREQOAAAATuRERA4AAABO5EREDgAAAE7kRETOAAAA4O7u7s4AAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true,
         "displayName": "basicChest"
+    },
+    "tile12": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwE5EREQAAADATkRERAAAAMBO5EREAAAAwE5EREQAAADATkRERAAAAMBOREREAES7RE5EREQA7LtATkRERAAEu0BOREREAAQAQE7kREQABABATkRERABEREROREREAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "basicCraft"
     },
     "level1": {
         "id": "level1",
