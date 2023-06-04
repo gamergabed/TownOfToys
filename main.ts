@@ -3,6 +3,32 @@ namespace SpriteKind {
     export const Obj = SpriteKind.create()
 }
 /**
+ * Furniture Styles:
+ * 
+ * Basic
+ * 
+ * Vintage
+ * 
+ * Modern
+ * 
+ * Cute
+ * 
+ * Toys
+ */
+/**
+ * Game Plans:
+ * 
+ * Animations
+ * 
+ * Tile Data
+ * 
+ * Furniture Types
+ * 
+ * Title Screen
+ * 
+ * Online Gameplay (Maybe)
+ */
+/**
  * Hi This is a note from TheOminousWolf This project is cool, as it contains stuff like Dynamic Depth and the saving of Tilemaps! You shoud look at the code of this project, who knows, maybe this will be useful! Well have fun! Oh! and there will be Comments that explain things, Other wise you will be as confused as someone learning redstone in minecraft.
  */
 function PlayerSetup () {

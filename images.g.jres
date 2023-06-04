@@ -19,6 +19,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "playerTest"
     },
+    "image5": {
+        "data": "hwQQABAAAAAHAAAAAAAAAHAAAAAAAAAAAAcAAAAAAABwAAAAAAAAAAAAAAAAAAAA4O/uDuDuAADg/98OAAAA7uDd3Q4zMwMA4N3dDjMzAwDg/98OAAAA7uDv7g7g7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "GirlTest"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",
