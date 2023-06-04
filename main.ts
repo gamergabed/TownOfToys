@@ -2,6 +2,9 @@ namespace SpriteKind {
     export const indicader = SpriteKind.create()
     export const Obj = SpriteKind.create()
 }
+/**
+ * Hi This is a note from TheOminousWolf This project is cool, as it contains stuff like Dynamic Depth and the saving of Tilemaps! You shoud look at the code of this project, who knows, maybe this will be useful! Well have fun! Oh! and there will be Comments that explain things, Other wise you will be as confused as someone learning redstone in minecraft.
+ */
 function PlayerSetup () {
     mySprite = sprites.create(assets.image`playerTest`, SpriteKind.Player)
     controller.moveSprite(mySprite)
@@ -16,6 +19,7 @@ function loadTilemap (name: string) {
         }
     }
 }
+// This Function is one of the ground breaking parts of this game, and yet, its simple. First we need a local variable (A Temporary Variable as some will call it) of an array. Next We have 3 For loops. One, for tilemap column, One for rows and one for the tile index (Head towrdes the INIT Function for what it is). After that we have an If Statement That checks if the tile at the col and row is equal to the current value of the tileIndex, If it is then add the index of the value of the third index and add it too the temp array. After all of that, Set a setting of a name of the saved world, to the current number array. I know it sounds complacaded but in reality, Its simpler than path finding!
 function saveTilemap (name: string) {
     _array = []
     for (let col = 0; col <= tileUtil.tilemapProperty(tileUtil.currentTilemap(), tileUtil.TilemapProperty.Columns) - 1; col++) {
