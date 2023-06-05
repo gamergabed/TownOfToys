@@ -33,8 +33,24 @@ namespace SpriteKind {
  */
 function PlayerSetup () {
     mySprite = sprites.create(assets.image`tempImage`, SpriteKind.Player)
-    controller.moveSprite(mySprite)
+    controller.moveSprite(mySprite, 75, 75)
     scene.cameraFollowSprite(mySprite)
+    if (gender) {
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BidleDown`,
+        500,
+        characterAnimations.rule(Predicate.FacingDown)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BidleLeft`,
+        200,
+        characterAnimations.rule(Predicate.FacingLeft)
+        )
+    } else {
+    	
+    }
 }
 function loadTilemap (name: string) {
     for (let col = 0; col <= tileUtil.tilemapProperty(tileUtil.currentTilemap(), tileUtil.TilemapProperty.Columns) - 1; col++) {
@@ -81,11 +97,12 @@ function setupWorld () {
     for (let value of tiles.getTilesByType(assets.tile`playerHouse`)) {
         createObject(value.column, value.row, 1)
     }
+    for (let value of tiles.getTilesByType(assets.tile`water`)) {
+        tiles.setWallAt(value, true)
+    }
 }
 function Init () {
-    if (blockSettings.exists("name")) {
-        name = blockSettings.readString("name")
-    } else {
+    if (!(blockSettings.exists("name"))) {
         name = game.askForString("Whats your name?", 9)
         blockSettings.writeString("name", name)
     }
@@ -115,12 +132,12 @@ function Init () {
     objConvert = [2, 4]
 }
 let objConvert: number[] = []
-let gender = false
 let name = ""
 let objIndex: Image[] = []
 let Object2: Sprite = null
 let _array: number[] = []
 let tileIndex: Image[] = []
+let gender = false
 let mySprite: Sprite = null
 Init()
 if (game.ask("Clear Game?", "This is Permement!")) {
