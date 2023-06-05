@@ -85,7 +85,54 @@ function PlayerSetup () {
         characterAnimations.rule(Predicate.MovingDown)
         )
     } else {
-    	
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GIdleDown`,
+        500,
+        characterAnimations.rule(Predicate.FacingDown, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GidleLeft`,
+        500,
+        characterAnimations.rule(Predicate.FacingLeft, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GidleRight`,
+        500,
+        characterAnimations.rule(Predicate.FacingRight, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GIdleUp`,
+        500,
+        characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GwalkUp`,
+        200,
+        characterAnimations.rule(Predicate.MovingUp)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GwalkRight`,
+        200,
+        characterAnimations.rule(Predicate.MovingRight)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GwalkLeft`,
+        200,
+        characterAnimations.rule(Predicate.MovingLeft)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`GwalkDown`,
+        200,
+        characterAnimations.rule(Predicate.MovingDown)
+        )
     }
 }
 function loadTilemap (name: string) {
