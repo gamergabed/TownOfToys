@@ -40,13 +40,49 @@ function PlayerSetup () {
         mySprite,
         assets.animation`BidleDown`,
         500,
-        characterAnimations.rule(Predicate.FacingDown)
+        characterAnimations.rule(Predicate.FacingDown, Predicate.NotMoving)
         )
         characterAnimations.loopFrames(
         mySprite,
         assets.animation`BidleLeft`,
+        500,
+        characterAnimations.rule(Predicate.FacingLeft, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BidleRight`,
+        500,
+        characterAnimations.rule(Predicate.FacingRight, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BidleUp`,
+        500,
+        characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BwalkUp`,
         200,
-        characterAnimations.rule(Predicate.FacingLeft)
+        characterAnimations.rule(Predicate.MovingUp)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BwalkRight`,
+        200,
+        characterAnimations.rule(Predicate.MovingRight)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BwalkLeft`,
+        200,
+        characterAnimations.rule(Predicate.MovingLeft)
+        )
+        characterAnimations.loopFrames(
+        mySprite,
+        assets.animation`BwalkDown`,
+        200,
+        characterAnimations.rule(Predicate.MovingDown)
         )
     } else {
     	
