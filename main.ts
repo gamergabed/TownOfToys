@@ -144,6 +144,9 @@ function loadTilemap (name: string) {
         }
     }
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    tiles.setTileAt(mySprite.tilemapLocation(), assets.tile`basicBed`)
+})
 // This Function is one of the ground breaking parts of this game, and yet, its simple. First we need a local variable (A Temporary Variable as some will call it) of an array. Next We have 3 For loops. One, for tilemap column, One for rows and one for the tile index (Head towrdes the INIT Function for what it is). After that we have an If Statement That checks if the tile at the col and row is equal to the current value of the tileIndex, If it is then add the index of the value of the third index and add it too the temp array. After all of that, Set a setting of a name of the saved world, to the current number array. I know it sounds complacaded but in reality, Its simpler than path finding!
 function saveTilemap (name: string) {
     _array = []
@@ -171,7 +174,12 @@ function createObject (col: number, row: number, _type: number) {
     tiles.setTileAt(tiles.getTileLocation(col, row), assets.tile`myTile`)
 }
 function setupWorld () {
-    tiles.setCurrentTilemap(tilemap`waterSplit`)
+    tiles.setCurrentTilemap(tilemap`loadableMap`)
+    if (blockSettings.exists("world")) {
+        loadTilemap("world")
+    } else {
+        tiles.setCurrentTilemap(tilemap`waterSplit`)
+    }
     tiles.placeOnRandomTile(mySprite, assets.tile`playerHouse`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(mySprite.tilemapLocation().column, mySprite.tilemapLocation().row + 1))
     for (let value of tiles.getTilesByType(assets.tile`tree`)) {
@@ -184,6 +192,9 @@ function setupWorld () {
         tiles.setWallAt(value, true)
     }
 }
+controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
+    loadTilemap("world")
+})
 function Init () {
     if (!(blockSettings.exists("name"))) {
         name = game.askForString("Whats your name?", 9)
@@ -209,7 +220,8 @@ function Init () {
     assets.tile`tree`,
     assets.tile`brige`,
     assets.tile`playerHouse`,
-    assets.tile`CityCenter`
+    assets.tile`CityCenter`,
+    assets.tile`basicBed`
     ]
     objIndex = [assets.image`myImage`, assets.image`myImage0`]
     objConvert = [2, 4]
@@ -222,11 +234,11 @@ let _array: number[] = []
 let tileIndex: Image[] = []
 let gender = false
 let mySprite: Sprite = null
-Init()
 if (game.ask("Clear Game?", "This is Permement!")) {
     blockSettings.clear()
     game.reset()
 }
+Init()
 PlayerSetup()
 setupWorld()
 game.onUpdate(function () {
@@ -234,4 +246,7 @@ game.onUpdate(function () {
         value.z = value.y
     }
     mySprite.z = mySprite.y
+})
+game.onUpdateInterval(5000, function () {
+    saveTilemap("world")
 })
